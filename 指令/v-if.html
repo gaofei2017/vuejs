@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-if指令</title>
+  <script src="../js/vue.min.js"></script>
+</head>
+<body>
+  <!-- v-if指令是根据条件表达式的值来执行元素的插入或者删除行为。 -->
+  <div id="app">
+    <h1>Hello,Vue.js!</h1>
+    <h1 v-if="yes">YES!</h1>
+    <h1 v-if="no">NO!</h1>
+    <h1 v-if="age>=25">Age:{{age}}</h1>
+    <h1 v-if="name.indexOf('keepfool')>=0">Name:{{name}}</h1>
+  </div>
+</body>
+<script>
+  var vm=new Vue({
+    el:'#app',
+    data:{
+      yes:true,
+      no:false,
+      age:28,
+      name:'keepfool'
+    }
+  })
+</script>
+</html>

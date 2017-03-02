@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-show</title>
+  <script src="../js/vue.min.js"></script>
+</head>
+<body>
+  <!--条件渲染指令，使用v-show指令的元素始终会被渲染到html，简单的为元素设置css的style属性  -->
+  <div id="app">
+    <h1>hello,vue.js!</h1>
+    <h1 v-show="yes">YES!</h1>
+    <h1 v-show="no">NO!</h1>
+    <h1 v-show="age>=24">Age:{{age}}</h1>
+    <h1 v-show="name.indexOf('jack')>=0">Name:{{name}}</h1>
+  </div>
+</body>
+<script>
+  var vm=new Vue({
+    el:'#app',
+    data:{
+      yes:true,
+      no:false,
+      age:30,
+      name:'jack'
+    }
+  })
+  /**
+   * 在Chrome控制台更改age属性(vm.$data.age=11)使得表达式age >= 25的值为false，
+   * 可以看到<h1>Age: 24</h1>元素被设置了style="display:none"
+   * 样式。
+   */
+</script>
+</html>

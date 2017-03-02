@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>属性和方法</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+
+</body>
+<script>
+// 只有这些被代理的属性是响应的。
+// 如果在实例创建之后添加新的属性到实例上，
+// 它不会触发视图更新
+  var data={a:1}
+  var vm=new Vue({
+    data:data
+  })
+  console.log(vm.a===data.a)//vue实例代理data对象里的所有属性
+  //设置属性会影响原始数据
+  vm.a=2
+  console.log(data.a);
+  //修改原始数据也会影响vue实例里的数据
+  data.a=3
+  console.log(vm.a)
+</script>
+</html>

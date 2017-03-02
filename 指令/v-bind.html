@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-bind指令</title>
+  <style>
+  ul>li{
+    list-style: none;
+    float:left;
+  }
+  a{
+    display: block;
+    width: 50px;
+    height: 50px;
+    border:1px solid blue;
+    text-decoration: none;
+    text-align: center;
+    line-height:50px;
+
+  }
+        .active{
+          background-color: red;
+          font-size: 18px;
+        }
+  </style>
+  <script src="../js/vue.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <ul class="pagination">
+      <li v-for="n in pageCount">
+        <a href="javascript:void(0)" v-bind:class="activeNumber==n+1?'active':''">{{n+1}}</a>
+      </li>
+    </ul>
+  </div>
+</body>
+<script>
+  var vm=new Vue({
+    el:'#app',
+    data:{
+      activeNumber:1,
+      pageCount:10
+    }
+  })
+</script>
+</html>

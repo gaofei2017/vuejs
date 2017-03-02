@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>mvvm</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+  <!--view  -->
+  <div id="example-1">
+    hello!{{name}}
+  </div>
+</body>
+<script type="text/javascript">
+// model
+var exampleData={
+  name:'vue.js'
+}
+// vue实例  viewmodel 连接view与model
+var examplVM=new Vue({
+  el:'#example-1',
+  data:exampleData
+})
+</script>
+</html>

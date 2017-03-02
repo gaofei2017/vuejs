@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>vuejs</title>
+  <script src="js/vue.min.js"></script>
+</head>
+<body>
+<!--这是我的View  -->
+<div id="app">
+  {{message}}
+</div>
+</body>
+<script src="js/vue.min.js"></script>
+<script>
+  //Model
+  var exampleData={
+    message:'Hello World!'
+  }
+  //Vue实例 ViewModel
+  new Vue({
+    el:'#app',
+    data:exampleData
+  })
+</script>
+</html>

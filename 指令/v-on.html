@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-on指令</title>
+  <script src="../js/vue.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <p><input type="text" v-model="message"/></p>
+    <p>
+      <!--click事件直接绑定一个方法  -->
+      <button v-on:click="greet">Greet</button>
+    </p>
+    <p>
+      <!--click事件使用内联语句  -->
+      <button v-on:click="say('hi')">hi</button>
+    </p>
+  </div>
+</body>
+<script>
+  var vm=new Vue({
+    el:'#app',
+    data:{
+      message:'hello,vue.js!'
+    },
+    //在methods对象中定义方法
+    methods:{
+      greet:function(){
+        //this指向vm
+        console.log(this.message)
+      },
+      say:function(msg){
+        console.log(msg);
+      }
+    }
+  })
+</script>
+</html>
